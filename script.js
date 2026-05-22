@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     const phone = '0667123987';
-                    const message = encodeURIComponent('السلام عليكم، أرغب في الحصول على نسخة تجريبية من نظام ميدي سيس الطبي');
+                    const message = encodeURIComponent('السلام عليكم، أرغب في الحصول على نسخة تجريبية من نظام  Medisys الطبي');
                     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
                 }
             });
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     const phone = '0667123987';
-                    const message = encodeURIComponent('السلام عليكم، أرغب في الاستفسار عن النسخة السحابية لنظام ميدي سيس وأريد عرضاً مناسباً');
+                    const message = encodeURIComponent('السلام عليكم، أرغب في الاستفسار عن النسخة السحابية لنظام MediSys وأريد عرضاً مناسباً');
                     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
                 }
             });
