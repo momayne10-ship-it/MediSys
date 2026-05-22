@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediSys | الحل الأذكى والأسهل لإدارة العيادات في الجزائر</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="relative min-h-screen overflow-hidden">
+        <div class="hero-bg">
+            <img src="DC7Cn (1).jpg" alt="طبيب محترف" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+
+        <!-- NAVBAR -->
+        <nav id="navbar" class="navbar">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="flex justify-between items-center h-24">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-[50px] bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white">
+<img src="icon.png" alt="">                       
+ </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white logo-text">MediSys</h2>
+                            <p class="text-xs text-white/70 logo-sub">نظام إدارة العيادات الذكي</p>
+                        </div>
+                    </a>
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#features" class="nav-link">الميزات</a>
+                        <a href="#pricing" class="nav-link">الباقات</a>
+                        <a href="#whyus" class="nav-link">لماذا نحن</a>
+                        <a href="#contact" class="nav-link">تواصل معنا</a>
+                    </div>
+                    <!-- زر تجربة مجانية في الناف بار (للاستخدام المستقبلي) -->
+                    <button id="freeTrialBtnNav" class="hidden md:flex px-6 py-3 rounded-full btn-white">تجربة مجانية</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <div class="relative z-10 min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+                <div class="max-w-3xl hero-content-desktop hero-content-mobile">
+                    <div class="badge-pill mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                        <span>الحل المتكامل للعيادات الجزائرية</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-shadow">
+                        إدارة ذكية <br>
+                        <span class="text-amber-300">لعيادات المستقبل</span>
+                    </h1>
+                    <p class="mt-8 text-xl text-white/95 leading-loose max-w-xl text-shadow-light">
+                        نظام سحابي ومكتبي متكامل يساعدك على إدارة المرضى والمواعيد والملفات الطبية والفواتير من منصة واحدة.
+                    </p>
+                   <div class="flex flex-wrap gap-5 mt-10">
+    <button class="px-8 py-4 rounded-full btn-white" id="freeTrialBtnHero2">تجربة مجانية</button>
+    <button class="px-8 py-4 rounded-full btn-ghost" id="demoVideoBtn">مشاهدة العرض</button>
+</div>
+                    <div class="flex flex-wrap gap-8 mt-10 text-sm text-white/90">
+                        <div><i class="fa-solid fa-cloud text-amber-300 ml-2"></i> نظام سحابي</div>
+                        <div><i class="fa-solid fa-desktop text-amber-300 ml-2"></i> نسخة سطح مكتب</div>
+                        <div><i class="fa-solid fa-shield-halved text-amber-300 ml-2"></i> حماية عالية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== ABOUT SECTION (عنوان وسيط + 6 ميزات موزعة) ========== -->
+<section id="about" class="about-section">
+    <div class="container">
+        <!-- العنوان الرئيسي في المنتصف -->
+        <div class="about-header text-center">
+            <div class="section-badge d-inline-block mx-auto">من نحن</div>
+            <h2 class="about-title text-center">
+                <span class="text-primary">MediSys</span><br>
+                ليس مجرد برنامج، بل منظومة متكاملة
+            </h2>
+            <div class="title-accent about-accent mx-auto"></div>
+            <p class="about-desc text-center mx-auto" style="max-width: 700px;">
+                <strong>MediSys</strong> هو نظام سحابي ومكتبي مصمم خصيصاً للعيادات الجزائرية، يجمع بين قوة التكنولوجيا وسهولة الاستخدام. 
+                نقدم حلاً متكاملاً لإدارة <strong>المواعيد، الملفات الطبية، الفواتير، والتقارير</strong> في منصة واحدة.
+            </p>
+        </div>
+
+        <!-- المحتوى السفلي: عمودان متساويان -->
+        <div class="about-grid">
+            <!-- العمود الأيمن (الميزات الأساسية) -->
+            <div class="about-col">
+                <div class="about-features-list">
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <div>
+                            <h4>نظام سحابي مرن</h4>
+                            <p>اعمل من أي مكان، وصول آمن للبيانات، تحديثات لحظية.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-desktop"></i>
+                        <div>
+                            <h4>نسخة مكتبية مستقلة</h4>
+                            <p>دفعة واحدة، تحديثات مجانية مدى الحياة، بدون حاجة للإنترنت.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <div>
+                            <h4>أمان وجزائرية 100%</h4>
+                            <p>بياناتك محمية بتشفير عالي، ودعم فني جزائري يفهم خصوصيتك.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- العمود الأيسر (ميزات إضافية بنفس التصميم) -->
+            <div class="about-col">
+                <div class="about-features-list">
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <h4>دعم فني 24/7</h4>
+                            <p>فريق جزائري متخصص، حل المشكلات عن بُعد، تدريب مجاني للفريق الطبي والإداري.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div>
+                            <h4>نظام إحصائي مرن ودقيق</h4>
+                            <p>تابع أداء العيادة من خلال إحصائيات شاملة ودقيقة تشمل عدد المرضى، الزيارات، الإيرادات، والمتابعات، مع تقارير واضحة تساعد على اتخاذ قرارات أسرع وأكثر كفاءة.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <div>
+                            <h4>إدارة متكاملة وسهلة</h4>
+                            <p>واجهة بسيطة وسريعة تساعد على تنظيم المواعيد، متابعة المرضى، إدارة الملفات الطبية والفواتير في مكان واحد لتوفير الوقت وتحسين سير العمل اليومي.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- يمكن إضافة أزرار إضافية هنا إذا رغبت، أو تركها فارغة -->
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ========== FEATURES SECTION – أبعاد أصلية ========== -->
+<section id="features" class="features-premium">
+    <div class="container">
+        <div class="features-header">
+            <div class="section-badge">المزايا التنافسية</div>
+            <h2 class="features-title">لماذا <span class="text-primary">MediSys</span> هو الخيار الأمثل؟</h2>
+            <div class="title-accent"></div>
+            <p class="features-desc">
+                نظام متكامل صُمم خصيصاً لإدارة العيادات بطريقة احترافية، يجمع بين السرعة، التنظيم وسهولة الاستخدام.
+            </p>
+        </div>
+
+        <div class="features-premium-grid">
+            <!-- بطاقة 1 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>إدارة متطورة للمواعيد</h3>
+                <p>تنظيم وجدولة مواعيد المرضى بسهولة مع متابعة دقيقة للحجوزات وتقليل الأخطاء وتحسين سير العمل داخل العيادة.</p>
+                <div class="box-premium-number">01</div>
+            </div>
+
+            <!-- بطاقة 2 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>ملفات طبية رقمية</h3>
+                <p>سجل طبي إلكتروني متكامل يحتوي على بيانات المرضى، الزيارات، الصور، التقارير والمعلومات الطبية في مكان واحد.</p>
+                <div class="box-premium-number">02</div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>تقارير وإحصائيات دقيقة</h3>
+                <p>تقارير متنوعة وشاملة تساعد على متابعة نشاط العيادة، عدد المرضى، الزيارات، الإيرادات والإحصائيات بدقة عالية.</p>
+                <div class="box-premium-number">03</div>
+            </div>
+
+            <!-- بطاقة 4 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>إدارة الفواتير والمدفوعات</h3>
+                <p>إنشاء وإدارة الفواتير بسهولة مع متابعة المدفوعات وتوفير تقارير مالية تساعد على تنظيم العمليات اليومية.</p>
+                <div class="box-premium-number">04</div>
+            </div>
+
+            <!-- بطاقة 5 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-shield-alt"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>أمان وحماية البيانات</h3>
+                <p>حماية متقدمة للبيانات الطبية مع صلاحيات متعددة للمستخدمين ونسخ احتياطي للحفاظ على معلومات المرضى.</p>
+                <div class="box-premium-number">05</div>
+            </div>
+
+            <!-- بطاقة 6 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>دعم فني مستمر</h3>
+                <p>فريق دعم متخصص لمساعدتك في الاستخدام، حل المشكلات وتقديم المرافقة لضمان تجربة عمل مستقرة وسلسة.</p>
+                <div class="box-premium-number">06</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PRICING SECTION ========== -->
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge-pill dark">
+                <i class="fa-regular fa-credit-card"></i> اختر الباقة المناسبة
+            </span>
+            <h2 class="section-title">خطط تناسب <span class="text-primary">جميع العيادات</span></h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">
+                نقدم لك خيارات مرنة: نسخة سطح المكتب بدفع مرة واحدة، أو اشتراكات سحابية حسب حجم العيادة.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <!-- Desktop Card -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="pricing-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div class="pricing-badge desktop-badge">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>نسخة مستقلة</span>
+                    </div>
+                </div>
+
+                <h3 class="pricing-title">نسخة سطح المكتب</h3>
+                <p class="pricing-desc">
+                    حل مستقل للعيادات الصغيرة والمتوسطة يعمل بدون إنترنت مع دفع مرة واحدة فقط.
+                </p>
+
+                <div class="pricing-price">
+                    15,000.00 <span class="currency">دج</span>
+                </div>
+
+                <div class="pricing-note">
+                    دفعة واحدة - بدون اشتراك شهري
+                </div>
+
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check-circle"></i> تجربة مجانية لمدة 5 أيام</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تحديثات أمنية وتحسينات أساسية</li>
+                    <li><i class="fa-solid fa-check-circle"></i> يعمل بدون اتصال بالإنترنت</li>
+                    <li><i class="fa-solid fa-check-circle"></i> مناسب للعيادات الصغيرة والمتوسطة</li>
+                </ul>
+
+                <div class="btn-wrapper">
+                    <button class="btn-primary w-100" id="desktopTrialBtn">
+                        ابدأ التجربة المجانية
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cloud Card -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="pricing-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div class="pricing-badge cloud-badge">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span>نسخ سحابية مرنة</span>
+                    </div>
+                </div>
+
+                <h3 class="pricing-title">النسخ السحابية (أونلاين)</h3>
+                <p class="pricing-desc">
+                    اشتراكات مرنة حسب عدد المستخدمين مع سنة أولى مجانية لكل الخطط.
+                </p>
+
+                <div class="cloud-plans">
+
+                    <div class="plan-item">
+                        <span><i class="fa-solid fa-user-md"></i> 1 طبيب + 1 ممرض</span>
+                        <span class="plan-price">39,000.00 دج</span>
+                    </div>
+
+                    <div class="plan-item">
+                        <span><i class="fa-solid fa-users"></i> 3 أطباء + 2 ممرضين</span>
+                        <span class="plan-price">54,000.00 دج</span>
+                    </div>
+
+                    <div class="plan-item">
+                        <span><i class="fa-solid fa-hospital-user"></i> 10 أطباء + 3 ممرضين</span>
+                        <span class="plan-price">93,000.00 دج</span>
+                    </div>
+
+                </div>
+
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> السنة الأولى مجانية بالكامل</li>
+                    <li><i class="fa-solid fa-check"></i> العمل من أي مكان عبر الإنترنت</li>
+                    <li><i class="fa-solid fa-check"></i> نسخ احتياطي آمن للبيانات</li>
+                </ul>
+
+                <div class="pricing-note">
+                    بعد السنة الأولى: اشتراك شهري بين <strong>1500 دج - 2500 دج</strong> حسب عدد المستخدمين
+                </div>
+
+                <div class="pricing-note">
+                    خصم <strong>10%</strong> عند الدفع السنوي المسبق
+                </div>
+
+                <div class="btn-wrapper">
+                    <button class="btn-outline-primary w-100" id="cloudRequestBtn">
+                        اطلب العرض
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="offer-note">
+            <i class="fa-regular fa-clock"></i>
+            السنة الأولى مجانية على جميع الخطط السحابية — بدون التزام مسبق
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHY US SECTION – نسخة واقعية ومقنعة ========== -->
+<section id="whyus" class="whyus-new">
+    <div class="container">
+        <div class="whyus-header">
+            <span class="badge-premium">✨ الميزة التنافسية</span>
+            <h2>ما الذي يقدمه <span class="text-primary">MediSys</span> لعيادتك فعلياً؟</h2>
+            <p>نظام مصمم لتبسيط إدارة العيادات اليومية، وتحسين التنظيم وتقليل الأخطاء الإدارية في العمل الطبي.</p>
+        </div>
+
+        <div class="comparison-cards-grid">
+
+            <!-- بطاقة 1 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-robot"></i>
+                        <h3>تنظيم ذكي لسير العمل</h3>
+                        <p>يساعدك على ترتيب المواعيد، الملفات، والمتابعة اليومية بطريقة منظمة وواضحة.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h4>الأنظمة التقليدية</h4>
+                        <p>تعتمد على دفاتر أو برامج بسيطة بدون تنظيم متكامل بين الأقسام.</p>
+                        <span class="pill gray">فوضى في الإدارة</span>
+                    </div>
+                </div>
+                <div class="floating-badge">تنظيم أفضل</div>
+            </div>
+
+            <!-- بطاقة 2 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <h3>إدارة واضحة للفواتير</h3>
+                        <p>تسجيل وتتبع الفواتير والمدفوعات بطريقة دقيقة وسهلة المراجعة.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h4>الطرق التقليدية</h4>
+                        <p>أخطاء في الحسابات وصعوبة تتبع العمليات المالية اليومية.</p>
+                        <span class="pill gray">أخطاء متكررة</span>
+                    </div>
+                </div>
+                <div class="floating-badge">دقة أعلى</div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <h3>ملفات مرضى منظمة</h3>
+                        <p>تجميع بيانات المرضى في مكان واحد يسهل الرجوع إليها في أي وقت.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-face-frown"></i>
+                        <h4>الملفات الورقية</h4>
+                        <p>ضياع المعلومات وصعوبة البحث عن تاريخ المريض بسرعة.</p>
+                        <span class="pill gray">غير عملي</span>
+                    </div>
+                </div>
+                <div class="floating-badge">سهولة الوصول</div>
+            </div>
+
+            <!-- بطاقة 4 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <h3>سرعة في إنجاز المهام</h3>
+                        <p>تقليل الوقت المستغرق في الإدخال اليدوي وتحسين الإنتاجية اليومية.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-lock"></i>
+                        <h4>الطرق القديمة</h4>
+                        <p>إجراءات بطيئة ومتكررة تؤدي إلى تأخير في العمل اليومي.</p>
+                        <span class="pill gray">تأخير مستمر</span>
+                    </div>
+                </div>
+                <div class="floating-badge">إنتاجية أعلى</div>
+            </div>
+
+            <!-- بطاقة 5 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <h3>تنظيم فريق العمل</h3>
+                        <p>توزيع واضح للمهام بين الطبيب،  والممرضين.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-clock"></i>
+                        <h4>بدون نظام</h4>
+                        <p>اختلاط في المهام وصعوبة تتبع المسؤوليات داخل العيادة.</p>
+                        <span class="pill gray">ارتباك إداري</span>
+                    </div>
+                </div>
+                <div class="floating-badge">تنسيق أفضل</div>
+            </div>
+
+            <!-- بطاقة 6 -->
+            <div class="comp-card">
+                <div class="comp-card-inner">
+                    <div class="comp-front">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>حماية بيانات العيادة</h3>
+                        <p>حفظ بيانات المرضى بطريقة منظمة مع صلاحيات وصول محددة لكل مستخدم.</p>
+                        <span class="pill green">ميزة أساسية</span>
+                    </div>
+                    <div class="comp-back">
+                        <i class="fa-solid fa-bug"></i>
+                        <h4>الأنظمة العادية</h4>
+                        <p>غياب التحكم في الصلاحيات وزيادة خطر فقدان أو تسرب البيانات.</p>
+                        <span class="pill gray">مخاطر أعلى</span>
+                    </div>
+                </div>
+                <div class="floating-badge">أمان أفضل</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ========== FAQ SECTION ========== -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge-pill dark">
+                <i class="fa-regular fa-circle-question"></i> أجوبة شافية
+            </span>
+            <h2 class="section-title">أكثر الأسئلة <span class="text-primary">شيوعاً</span></h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">
+                إجابات واضحة لأهم استفساراتك قبل البدء مع MediSys.
+            </p>
+        </div>
+
+        <div class="faq-grid">
+
+            <!-- سؤال 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-regular fa-circle-question"></i></div>
+                    <h3>ما الفرق بين النسخة السحابية ونسخة سطح المكتب؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>نسخة سطح المكتب:</strong> دفع مرة واحدة، تعمل بدون إنترنت، ومناسبة للعيادات التي تفضل العمل المحلي داخل جهاز واحد أو شبكة داخلية.</p>
+                    <p><strong>النسخة السحابية:</strong> اشتراك مرن مع إمكانية الوصول من أي جهاز، وتناسب العيادات التي تحتوي على عدة أطباء أو فريق عمل متعدد داخل نفس المؤسسة الطبية.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>هل بيانات العيادة آمنة؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، يتم تأمين البيانات باستخدام تقنيات تشفير وحماية متعددة، مع نظام صلاحيات يحدد من يمكنه الوصول إلى المعلومات داخل العيادة لضمان الخصوصية وحماية بيانات المرضى.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-solid fa-coins"></i></div>
+                    <h3>ما هي طرق الدفع المتاحة؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نوفر عدة طرق دفع مرنة تشمل:</p>
+                    <ul>
+                        <li>💳 الدفع عند الاستلام (للنسخة المكتبية)</li>
+                        <li>📱 الدفع عبر بريدي موب</li>
+                        <li>💳 بطاقات الدفع المحلية (CIB / EDAHABIA)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- سؤال 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>كيف يتم الدعم الفني؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نوفر دعماً فنياً جزائرياً يفهم طبيعة العمل داخل العيادات المحلية ويمكن التواصل عبر:</p>
+                    <ul>
+                        <li>📞 الهاتف: حسب أوقات العمل الرسمية</li>
+                        <li>💬 الواتساب: تواصل مباشر وسريع</li>
+                        <li>📧 البريد الإلكتروني: للطلبات التقنية والتفاصيل</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- سؤال 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>هل يتناسب النظام مع أي نوع من العيادات؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، MediSys مناسب لمختلف أنواع العيادات مثل:</p>
+                    <ul>
+                        <li>عيادات طب الأسنان</li>
+                        <li>عيادات التجميل</li>
+                        <li>الطب العام</li>
+                        <li>العيادات المتخصصة متعددة الأطباء</li>
+                    </ul>
+                    <p>ويمكن تكييفه حسب طريقة عمل كل عيادة.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 6 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="faq-icon"><i class="fa-solid fa-gear"></i></div>
+                    <h3>هل يتم تحديث النظام وإضافة مزايا جديدة؟</h3>
+                    <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، يتم تطوير النظام باستمرار بناءً على ملاحظات الأطباء والمستخدمين، مع إضافة تحسينات دورية لضمان أفضل تجربة استخدام.</p>
+                    <p>كما يمكن طلب إضافة ميزات خاصة حسب احتياجات العيادة، ويتم دراسة الطلب وتنفيذه حسب الاتفاق، مع إصدار فاتورة خاصة للتطوير المخصص.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION – أيقونات فقط ========== -->
+<section id="contact" class="contact-section-icons">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge-pill dark">
+                <i class="fa-regular fa-message"></i> تواصل معنا
+            </span>
+            <h2 class="section-title">نحن هنا <span class="text-primary">لخدمتك</span></h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">
+                تواصل مع فريق MediSys عبر أي من القنوات التالية، وسنكون في خدمتك في أقرب وقت ممكن.
+            </p>
+        </div>
+
+        <div class="contact-icons-grid">
+
+            <!-- واتساب -->
+            <a href="https://wa.me/213667123987?text=أهلاً، أرغب في الاستفسار عن MediSys" 
+               class="contact-icon-card" target="_blank" rel="noopener noreferrer">
+                <div class="icon-circle whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3>واتساب</h3>
+                <p>0667123987</p>
+                <span class="contact-hint">رد في أقرب وقت</span>
+            </a>
+
+            <!-- تيليغرام -->
+            <a href="https://t.me/MediSys_bot" 
+               class="contact-icon-card" target="_blank" rel="noopener noreferrer">
+                <div class="icon-circle telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+                <h3>تيليغرام</h3>
+                <p>0667123987</p>
+                <span class="contact-hint">تواصل مباشر</span>
+            </a>
+
+            <!-- البريد الإلكتروني -->
+            <a href="mailto:momayne10@gmail.com" class="contact-icon-card">
+                <div class="icon-circle email">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <h3>البريد الإلكتروني</h3>
+                <p>momayne10@gmail.com</p>
+                <span class="contact-hint">نرد في أقرب وقت</span>
+            </a>
+
+            <!-- الهاتف -->
+            <a href="tel:+213667123987" class="contact-icon-card">
+                <div class="icon-circle phone">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>اتصال هاتفي</h3>
+                <p>0667123987</p>
+                <span class="contact-hint">متاح للتواصل المباشر</span>
+            </a>
+
+        </div>
+
+        <!-- نص الثقة -->
+        <div class="contact-trust">
+            <i class="fa-solid fa-headset"></i>
+            <p>فريق دعم جزائري متخصص يفهم احتياجات العيادات الطبية ويقدم المساعدة حسب الحالة والطلب.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== PRIVACY & SECURITY SECTION – بنفس تصميم Features ========== -->
+<section id="privacy" class="features-premium privacy-premium">
+    <div class="container">
+        <div class="features-header">
+            <div class="section-badge">خصوصية وأمان مطلقين</div>
+            <h2 class="features-title">بياناتك <span class="text-primary">في أيدٍ أمينة</span></h2>
+            <div class="title-accent"></div>
+            <p class="features-desc">
+                نحن ندرك حساسية المعلومات الطبية، لذلك نحرص على توفير بيئة آمنة تحافظ على سرية وتنظيم بيانات العيادة بشكل موثوق وسهل الاستخدام.
+            </p>
+        </div>
+
+        <div class="features-premium-grid">
+
+            <!-- بطاقة 1 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>تشفير متقدم</h3>
+                <p>يتم تأمين البيانات أثناء التخزين والنقل باستخدام تقنيات تشفير حديثة لضمان حماية المعلومات الحساسة.</p>
+                <div class="box-premium-number">01</div>
+            </div>
+
+            <!-- بطاقة 2 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-user-check"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>صلاحيات متعددة المستويات</h3>
+                <p>تحديد صلاحيات دقيقة لكل مستخدم داخل العيادة بما يتناسب مع دوره لضمان تنظيم العمل.</p>
+                <div class="box-premium-number">02</div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-database"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>نسخ احتياطي تلقائي</h3>
+                <p>يتم حفظ نسخة احتياطية بشكل دوري لضمان استرجاع البيانات عند الحاجة دون فقدان المعلومات.</p>
+                <div class="box-premium-number">03</div>
+            </div>
+
+            <!-- بطاقة 4 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>خصوصية بيانات المرضى</h3>
+                <p>يتم عرض الملفات الطبية فقط للمستخدمين المصرح لهم داخل العيادة وفق صلاحيات محددة.</p>
+                <div class="box-premium-number">04</div>
+            </div>
+
+            <!-- بطاقة 5 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>حذف آمن عند الطلب</h3>
+                <p>يمكن طلب حذف البيانات بشكل كامل عند الحاجة وفق إجراءات واضحة تحافظ على الخصوصية.</p>
+                <div class="box-premium-number">05</div>
+            </div>
+
+            <!-- بطاقة 6 -->
+            <div class="feature-premium-box">
+                <div class="feature-premium-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <div class="icon-premium-blob"></div>
+                </div>
+                <h3>مراجعة دورية للنظام</h3>
+                <p>يتم فحص النظام بشكل دوري للتأكد من استقراره وتحسين مستوى الأمان بشكل مستمر.</p>
+                <div class="box-premium-number">06</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== TEAM SECTION – تصميم احترافي محسّن ========== -->
+<section id="team" class="team-section-pro">
+    <div class="container">
+        <div class="team-header">
+            <span class="team-badge"><i class="fa-solid fa-microchip"></i> هندسة جزائرية 100%</span>
+            <h2>الفريق التقني <span class="text-primary">المسؤول عن MediSys</span></h2>
+            <div class="team-divider"></div>
+            <p>
+                G Mayne فريق جزائري شاب يجمع بين الخبرة التقنية وفهم واقعي لاحتياجات العيادات الطبية في الجزائر.
+            </p>
+        </div>
+
+        <!-- إحصائيات الفريق (تم حذف الأرقام حسب الطلب) -->
+        <div class="team-stats">
+            <!-- يمكن تركها فارغة أو إضافة إحصائيات لاحقاً -->
+        </div>
+
+        <!-- بطاقة القائد -->
+        <div class="team-leader-card">
+            <div class="leader-image">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+
+            <div class="leader-info">
+                <h3>بوساق عبد المؤمن</h3>
+                <span class="leader-title">المؤسس والمسؤول التقني عن MediSys</span>
+
+                <p>
+                    مهندس برمجيات بخبرة تفوق 3 سنوات في تطوير الأنظمة وإدارة المشاريع التقنية، يقود تصميم وتطوير MediSys برؤية تقنية متقدمة تهدف إلى بناء حل رقمي متكامل يمكّن العيادات من تحسين تنظيم العمل ورفع كفاءة إدارة العمليات اليومية بدقة واحترافية عالية.
+                </p>
+
+                <div class="leader-social">
+                    <!-- الموقع الشخصي -->
+                    <a href="https://momayne10-ship-it.github.io/Gmayne_portfolio/" target="_blank" aria-label="Portfolio">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                    <!-- البريد الإلكتروني -->
+                    <a href="mailto:devmayne8@gmail.com" aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <!-- الهاتف -->
+                    <a href="tel:0799464300" aria-label="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- خاتمة -->
+        <div class="team-footer-pro">
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+                نحن <strong>G Mayne</strong> نؤمن بأن الحلول الرقمية في القطاع الصحي يجب أن تكون بسيطة وفعالة
+                وقريبة من احتياجات الطبيب والمريض.
+            </p>
+            <span>— فريق G Mayne</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== FOOTER SECTION (نفس التصميم الأصلي) ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3>MediSys</h3>
+                        <p>نظام إدارة العيادات الذكي</p>
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    حل متكامل يساعد العيادات الجزائرية على إدارة المرضى، المواعيد، الملفات الطبية، والفواتير بذكاء واحترافية.
+                </p>
+                <div class="footer-social">
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://t.me/MediSys_bot" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+</div>
+            </div>
+
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#features">الميزات</a></li>
+                    <li><a href="#pricing">الباقات</a></li>
+                    <li><a href="#whyus">لماذا MediSys</a></li>
+                    <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>الدعم والمساعدة</h4>
+                <ul>
+                    <li><a href="#">الدعم الفني</a></li>
+                    <li><a href="#">طلب عرض توضيحي</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">الشروط والأحكام</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-phone"></i> +213 667 123 987</li>
+                    <li><i class="fa-regular fa-envelope"></i> momayne10@gmail.com</li>
+                    <li><i class="fa-regular fa-clock"></i> الدعم الفني 24/7</li>
+                    <li><i class="fa-solid fa-location-dot"></i> المسيلة (خدمة عن بُعد)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 MediSys | جميع الحقوق محفوظة. تصميم وتطوير <strong>G Mayne</strong></p>
+        </div>
+    </div>
+</footer>
+<!-- ========== أيقونة واتساب العائمة ========== -->
+<a href="https://wa.me/213667123987?text=أهلاً، أرغب في الاستفسار عن ميدي سيس" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+    <!-- بقية الأقسام ستأتي لاحقاً -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
