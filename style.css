@@ -1380,7 +1380,7 @@ body {
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid #eef2f5;
+    border: none; /* removed border for a frameless look */
     box-shadow: 0 10px 25px -5px rgba(0,0,0,0.03);
     width: 220px;
     display: flex;
@@ -1392,7 +1392,7 @@ body {
 .contact-icon-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 30px -12px rgba(44,125,160,0.15);
-    border-color: rgba(44,125,160,0.3);
+    border-color: transparent; /* no border on hover */
 }
 
 .icon-circle {
@@ -1500,13 +1500,13 @@ body {
 /* استجابة للهواتف: عرض أفقي */
 @media (max-width: 768px) {
     .contact-icons-grid {
-        flex-direction: row;        /* أفقي */
+        flex-direction: row; /* ensure horizontal layout on mobile */
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.2rem;
     }
     .contact-icon-card {
-        width: 160px;              /* عرض مناسب للهاتف */
+        width: 160px;
         padding: 1.2rem 0.8rem;
     }
     .icon-circle {
@@ -1552,6 +1552,588 @@ body {
 }
 
 
+
+
+/* ========== FUTURE VISION SECTION – نطوّر لنخدمك أفضل ========== */
+.future-vision-section {
+    padding: 100px 0;
+    background: linear-gradient(125deg, #ffffff 0%, #f1f6fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.future-vision-section::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(44,125,160,0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.future-vision-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,179,71,0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.future-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.future-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(44,125,160,0.12);
+    padding: 0.4rem 1.5rem;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2C7DA0;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.future-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e2f3e;
+    margin-bottom: 0.5rem;
+}
+
+.text-primary {
+    color: #2C7DA0;
+}
+
+.future-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #2C7DA0, #ffb347);
+    margin: 0.8rem auto 1.2rem;
+    border-radius: 5px;
+}
+
+.future-subhead {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #5a6e7c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* شبكة البطاقات */
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0 2rem;
+}
+
+.future-card {
+    background: white;
+    border-radius: 28px;
+    padding: 2rem 1.8rem;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: 1px solid rgba(44,125,160,0.08);
+    box-shadow: 0 15px 35px -12px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.future-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(44,125,160,0.2);
+    box-shadow: 0 30px 45px -15px rgba(44,125,160,0.2);
+}
+
+.future-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f0f7fc, #e9f2f7);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2.2rem;
+    color: #2C7DA0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.future-card:hover .future-icon {
+    background: #2C7DA0;
+    color: white;
+    transform: scale(1.05);
+}
+
+.icon-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(44,125,160,0.2) 0%, transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.future-card:hover .icon-glow {
+    opacity: 1;
+}
+
+.future-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #1e2f3e;
+}
+
+.future-card p {
+    color: #5a6e7c;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+}
+
+.payment-methods span {
+    background: #f1f5f9;
+    padding: 0.2rem 0.8rem;
+    border-radius: 60px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #2C7DA0;
+}
+
+.future-tag {
+    display: inline-block;
+    background: rgba(255,179,71,0.12);
+    color: #ffb347;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 60px;
+    margin-top: 0.5rem;
+}
+
+/* ملاحظة سفلى */
+.future-note {
+    text-align: center;
+    background: rgba(44,125,160,0.03);
+    border-radius: 60px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    border: 1px solid rgba(44,125,160,0.1);
+}
+
+.future-note i {
+    font-size: 1.5rem;
+    color: #2C7DA0;
+}
+
+.future-note p {
+    margin: 0;
+    color: #1e2f3e;
+    font-size: 0.9rem;
+}
+
+/* استجابة */
+@media (max-width: 992px) {
+    .future-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .future-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .future-vision-section {
+        padding: 60px 0;
+    }
+    .future-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    .future-card {
+        padding: 1.5rem;
+    }
+    .future-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+    }
+    .future-card h3 {
+        font-size: 1.3rem;
+    }
+    .future-note {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+/* ========== FUTURE VISION – مقارنة السحابي والمكتبي ========== */
+.future-vision-section {
+    padding: 100px 0;
+    background: linear-gradient(125deg, #ffffff 0%, #f5f9fe 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.future-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.future-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(44,125,160,0.12);
+    padding: 0.4rem 1.5rem;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2C7DA0;
+}
+
+.future-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+    color: #1e2f3e;
+}
+
+.text-primary {
+    color: #2C7DA0;
+}
+
+.future-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #2C7DA0, #ffb347);
+    margin: 0.8rem auto;
+    border-radius: 5px;
+}
+
+.future-subhead {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #5a6e7c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* تخطيط العمودين */
+.future-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.future-col {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 40px;
+    padding: 2rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 15px 35px -12px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.future-col:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px -12px rgba(44,125,160,0.2);
+}
+
+/* ترويسة العمود */
+.future-col-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px dashed #eef2f5;
+}
+
+.future-col-header i {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.cloud-header i {
+    color: #2C7DA0;
+}
+.offline-header i {
+    color: #ffb347;
+}
+
+.future-col-header h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+}
+
+.future-col-header h3 span {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #2C7DA0;
+}
+
+.future-col-header p {
+    color: #6c7e91;
+    font-size: 0.85rem;
+}
+
+/* قائمة الميزات */
+.future-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.future-list-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.future-list-item i {
+    font-size: 1.5rem;
+    color: #2C7DA0;
+    min-width: 40px;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.offline-col .future-list-item i {
+    color: #ffb347;
+}
+
+.future-list-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #1e2f3e;
+}
+
+.future-list-item p {
+    font-size: 0.9rem;
+    color: #5a6e7c;
+    line-height: 1.5;
+}
+
+/* حالة التطوير */
+.future-status {
+    margin-top: 2rem;
+    background: rgba(44,125,160,0.05);
+    padding: 0.8rem;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #2C7DA0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.offline-status {
+    background: rgba(255,179,71,0.08);
+    color: #ffb347;
+}
+
+/* ========== البطاقة الختامية المحسّنة ========== */
+.future-footer-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 36px;
+    padding: 1.8rem 2rem;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+    border: 1px solid rgba(44,125,160,0.2);
+    box-shadow: 0 12px 30px -10px rgba(44,125,160,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.future-footer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 35px -12px rgba(44,125,160,0.2);
+}
+
+.footer-card-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(145deg, #2C7DA0, #1a5f7a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(44,125,160,0.3);
+}
+
+.footer-card-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.footer-card-content {
+    flex: 1;
+}
+
+.footer-card-content h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    color: #1e2f3e;
+    border-right: 4px solid #2C7DA0;
+    padding-right: 0.8rem;
+}
+
+.footer-card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-card-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(44,125,160,0.03);
+    padding: 0.6rem 1rem;
+    border-radius: 60px;
+    transition: background 0.2s;
+}
+
+.footer-card-item:hover {
+    background: rgba(44,125,160,0.08);
+}
+
+.footer-card-item i {
+    font-size: 1.2rem;
+    color: #2C7DA0;
+    width: 28px;
+    text-align: center;
+}
+
+.footer-card-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #2c3e44;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.footer-card-item strong {
+    color: #2C7DA0;
+    font-weight: 700;
+}
+
+.badge-free {
+    background: #2C7DA0;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 60px;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+/* استجابة */
+@media (max-width: 992px) {
+    .future-comparison {
+        flex-direction: column;
+    }
+    .future-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .future-vision-section {
+        padding: 60px 0;
+    }
+    .future-col {
+        padding: 1.5rem;
+    }
+    .future-list-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .future-list-item i {
+        margin: 0 auto 0.5rem;
+    }
+    .future-status {
+        font-size: 0.7rem;
+    }
+    .future-footer-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .footer-card-icon {
+        margin-bottom: 0.5rem;
+    }
+    .footer-card-content h4 {
+        text-align: center;
+        border-right: none;
+        border-bottom: 2px solid #2C7DA0;
+        padding-bottom: 0.3rem;
+        display: inline-block;
+    }
+    .footer-card-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.8rem;
+    }
+    .footer-card-item i {
+        margin-bottom: 0.3rem;
+    }
+    .badge-free {
+        display: inline-block;
+        margin-top: 0.2rem;
+    }
+}
 /* ========== TEAM SECTION – تصميم احترافي محسّن ========== */
 .team-section-pro {
     padding: 5rem 0;
@@ -1980,4 +2562,7 @@ body {
         left: 15px;
     }
 }
+
+
+
 /* جميع الأنماط الأخرى الخاصة بـ .features-premium-grid و .feature-premium-box سبق تضمينها في ملف features.css أو style.css */
