@@ -336,9 +336,9 @@ document.querySelectorAll('.future-card').forEach(card => {
         }
     });
 });
-// ========== FUTURE VISION – تأثير الظهور + تنبيهات ==========
+// ========== FUTURE VISION SECTION – نطوّر لنخدمك أفضل ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // ظهور الأعمدة عند التمرير
+    // 1. ظهور الأعمدة عند التمرير
     const futureColumns = document.querySelectorAll('.future-col');
     if (futureColumns.length) {
         const observer = new IntersectionObserver((entries) => {
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
         
         futureColumns.forEach(col => {
             col.style.opacity = '0';
@@ -358,29 +358,47 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(col);
         });
     }
-    
-    // النقر على أي ميزة -> إشعار (قيد التطوير / حسب الطلب)
+
+    // 2. النقر على أي ميزة – رسالة مختلفة حسب النسخة
     const featureItems = document.querySelectorAll('.future-list-item');
     if (featureItems.length && typeof Swal !== 'undefined') {
         featureItems.forEach(item => {
+            // استثناء ميزة Medmap
             const hasMedmap = item.querySelector('#medmapTrigger');
             if (hasMedmap) return;
-            
+
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const featureName = item.querySelector('h4')?.innerText || 'هذه الميزة';
+                
+                // تحديد ما إذا كانت الميزة داخل العمود السحابي أم المكتبي
+                const isCloud = item.closest('.cloud-col') !== null;
+                let messageHtml = '';
+                
+                if (isCloud) {
+                    // رسالة للنسخة السحابية (أونلاين)
+                    messageHtml = `<p style="font-size:1rem; text-align:center;">هذه الميزة قيد التطوير.<br> يمكن طلبها بشكل خاص حسب احتياج عيادتك عبر واتساب.</p>`;
+                } else {
+                    // رسالة للنسخة المكتبية (أوفلاين)
+                    messageHtml = `<p style="font-size:1rem; text-align:center;">هذه الميزة قيد الدراسة.<br> سيتم اختيار الميزات الأكثر طلباً من الأطباء وإضافتها ضمن تحديث قادم.</p>`;
+                }
+                
                 Swal.fire({
                     icon: 'info',
                     title: featureName,
-                    html: `<p style="font-size:1rem; text-align:center;">هذه الميزة قيد التطوير.<br> سيتم إضافتها ضمن التحديثات الدورية (مجانية) أو يمكن طلبها بشكل خاص عبر واتساب.</p>`,
-                    confirmButtonText: 'تواصل معنا',
-                    showCancelButton: true,
+                    html: messageHtml,
+                    confirmButtonText: isCloud ? 'تواصل معنا' : 'حسناً',
+                    showCancelButton: isCloud ? true : false,
                     cancelButtonText: 'إغلاق',
                     confirmButtonColor: '#2C7DA0',
                     cancelButtonColor: '#9e9e9e',
-                    customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full px-6', cancelButton: 'rounded-full px-6' }
+                    customClass: {
+                        popup: 'rounded-3xl',
+                        confirmButton: 'rounded-full px-6',
+                        cancelButton: 'rounded-full px-6'
+                    }
                 }).then((result) => {
-                    if (result.isConfirmed) {
+                    if (isCloud && result.isConfirmed) {
                         const phone = '0667123987';
                         const message = encodeURIComponent(`السلام عليكم، أرغب في الاستفسار عن ميزة "${featureName}" في نظام MediSys.`);
                         window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
@@ -389,8 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // معالج خاص لرابط Medmap
+
+    // 3. معالج خاص لرابط Medmap (بدون تغيير)
     const medmapTrigger = document.getElementById('medmapTrigger');
     if (medmapTrigger && typeof Swal !== 'undefined') {
         medmapTrigger.addEventListener('click', (e) => {
@@ -407,7 +425,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 `,
                 confirmButtonText: 'حسناً',
                 confirmButtonColor: '#2C7DA0',
-                customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full px-6' }
+                customClass: {
+                    popup: 'rounded-3xl',
+                    confirmButton: 'rounded-full px-6'
+                }
             });
         });
     }
