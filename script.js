@@ -301,6 +301,91 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// ========== FUTURE SECTION – تأثير ظهور البطاقات عند التمرير ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const futureCards = document.querySelectorAll('.future-card');
+    if (futureCards.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        futureCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.5s ease, transform 0.5s ease ${index * 0.08}s`;
+            observer.observe(card);
+        });
+    }
+});
+
+// (اختياري) إضافة أداة توضيحية صغيرة عند النقر على أيقونة البطاقات
+document.querySelectorAll('.future-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // فقط إذا كان المستخدم يريد تنبيهاً (اختياري)
+        // يمكن تفعيله لعرض رسالة ودية بأن الميزة قيد التطوير
+        if (e.target.closest('.future-card') && !e.target.closest('.payment-methods')) {
+            // لا تفعل شيء، فقط لتوضيح أنه يمكن إضافة تفاعل
+            // console.log('ميزة مستقبلية قيد الإعداد');
+        }
+    });
+});// ========== FUTURE VISION – تأثير الظهور + تنبيه عند النقر على ميزة ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // ظهور الأعمدة عند التمرير
+    const futureColumns = document.querySelectorAll('.future-col');
+    if (futureColumns.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        futureColumns.forEach(col => {
+            col.style.opacity = '0';
+            col.style.transform = 'translateY(30px)';
+            col.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(col);
+        });
+    }
+    
+    // النقر على أي ميزة -> إشعار (قيد التطوير / حسب الطلب)
+    const featureItems = document.querySelectorAll('.future-list-item');
+    if (featureItems.length && typeof Swal !== 'undefined') {
+        featureItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const featureName = item.querySelector('h4')?.innerText || 'هذه الميزة';
+                Swal.fire({
+                    icon: 'info',
+                    title: featureName,
+                    html: `<p style="font-size:1rem; text-align:center;">هذه الميزة قيد التطوير.<br> سيتم إضافتها ضمن التحديثات الدورية (مجانية) أو يمكن طلبها بشكل خاص عبر واتساب.</p>`,
+                    confirmButtonText: 'تواصل معنا',
+                    showCancelButton: true,
+                    cancelButtonText: 'إغلاق',
+                    confirmButtonColor: '#2C7DA0',
+                    cancelButtonColor: '#9e9e9e',
+                    customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full px-6', cancelButton: 'rounded-full px-6' }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const phone = '0667123987';
+                        const message = encodeURIComponent(`السلام عليكم، أرغب في الاستفسار عن ميزة "${featureName}" في نظام MediSys.`);
+                        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+                    }
+                });
+            });
+        });
+    }
+});
 // تنبيه عند النقر على واتساب (اختياري)
 const whatsappBtn = document.querySelector('.whatsapp-float');
 if (whatsappBtn) {
@@ -316,3 +401,4 @@ if (whatsappBtn) {
         // });
     });
 }
+
