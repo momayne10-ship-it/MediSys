@@ -335,7 +335,8 @@ document.querySelectorAll('.future-card').forEach(card => {
             // console.log('ميزة مستقبلية قيد الإعداد');
         }
     });
-});// ========== FUTURE VISION – تأثير الظهور + تنبيه عند النقر على ميزة ==========
+});
+// ========== FUTURE VISION – تأثير الظهور + تنبيهات ==========
 document.addEventListener('DOMContentLoaded', function() {
     // ظهور الأعمدة عند التمرير
     const futureColumns = document.querySelectorAll('.future-col');
@@ -362,6 +363,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const featureItems = document.querySelectorAll('.future-list-item');
     if (featureItems.length && typeof Swal !== 'undefined') {
         featureItems.forEach(item => {
+            const hasMedmap = item.querySelector('#medmapTrigger');
+            if (hasMedmap) return;
+            
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const featureName = item.querySelector('h4')?.innerText || 'هذه الميزة';
@@ -382,6 +386,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
                     }
                 });
+            });
+        });
+    }
+    
+    // معالج خاص لرابط Medmap
+    const medmapTrigger = document.getElementById('medmapTrigger');
+    if (medmapTrigger && typeof Swal !== 'undefined') {
+        medmapTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            Swal.fire({
+                icon: 'info',
+                title: '🌐 مشروع Medmap',
+                html: `
+                    <div style="text-align: right; font-size: 1rem; line-height: 1.6;">
+                        <p><strong>Medmap</strong> هو نظام رقمي مسجل ضمن <strong>حاضنة أعمال</strong>، يهدف إلى تحويل القطاع الصحي في جزء معين إلى نظام جد احترافي ومرن، بحيث يربط مختلف عناصر الفاعلة في القطاع مع بعضهم البعض في نظام واحد متكامل.</p>
+                        <p style="margin-top: 0.8rem;">سيتم دمج هذه التقنية مع MediSys لتوفير تكامل خارجي متطور عبر API مفتوح.</p>
+                        <p style="margin-top: 0.8rem;">🚀 تابعونا لمزيد من التفاصيل.</p>
+                    </div>
+                `,
+                confirmButtonText: 'حسناً',
+                confirmButtonColor: '#2C7DA0',
+                customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full px-6' }
             });
         });
     }
