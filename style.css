@@ -1978,107 +1978,94 @@ body {
     color: #ffb347;
 }
 
-/* ========== البطاقة الختامية المحسّنة ========== */
-.future-footer-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-radius: 36px;
+/* رابط Medmap */
+.medmap-link {
+    color: #2C7DA0;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.medmap-link:hover {
+    color: #ffb347;
+}
+
+/* ========== البطاقة الختامية المبسطة (نص مختصر) ========== */
+.future-footer-card-simple {
+    background: #ffffff;
+    border-radius: 32px;
     padding: 1.8rem 2rem;
     margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
-    border: 1px solid rgba(44,125,160,0.2);
-    box-shadow: 0 12px 30px -10px rgba(44,125,160,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
 }
 
-.future-footer-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 35px -12px rgba(44,125,160,0.2);
-}
-
-.footer-card-icon {
+.footer-card-icon-simple {
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(145deg, #2C7DA0, #1a5f7a);
+    width: 56px;
+    height: 56px;
+    background: #2C7DA0;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(44,125,160,0.3);
 }
 
-.footer-card-icon i {
-    font-size: 1.8rem;
+.footer-card-icon-simple i {
+    font-size: 1.6rem;
     color: white;
 }
 
-.footer-card-content {
+.footer-card-content-simple {
     flex: 1;
 }
 
-.footer-card-content h4 {
+.footer-card-content-simple h4 {
     font-size: 1.3rem;
     font-weight: 800;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.8rem 0;
     color: #1e2f3e;
     border-right: 4px solid #2C7DA0;
     padding-right: 0.8rem;
 }
 
-.footer-card-grid {
+.footer-card-grid-simple {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
-.footer-card-item {
+.footer-card-item-simple {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(44,125,160,0.03);
-    padding: 0.6rem 1rem;
-    border-radius: 60px;
-    transition: background 0.2s;
+    padding: 0.4rem 0;
 }
 
-.footer-card-item:hover {
-    background: rgba(44,125,160,0.08);
-}
-
-.footer-card-item i {
+.footer-card-item-simple i {
     font-size: 1.2rem;
     color: #2C7DA0;
     width: 28px;
     text-align: center;
 }
 
-.footer-card-item p {
+.footer-card-item-simple p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #2c3e44;
-    line-height: 1.4;
+    line-height: 1.5;
     flex: 1;
 }
 
-.footer-card-item strong {
+.footer-card-item-simple strong {
     color: #2C7DA0;
     font-weight: 700;
 }
 
-.badge-free {
-    background: #2C7DA0;
-    color: white;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 60px;
-    margin-right: 0.5rem;
-    display: inline-block;
-}
-
-/* استجابة */
+/* استجابة للهواتف */
 @media (max-width: 992px) {
     .future-comparison {
         flex-direction: column;
@@ -2105,33 +2092,22 @@ body {
     .future-status {
         font-size: 0.7rem;
     }
-    .future-footer-card {
+    .future-footer-card-simple {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 1.5rem;
     }
-    .footer-card-icon {
-        margin-bottom: 0.5rem;
-    }
-    .footer-card-content h4 {
+    .footer-card-content-simple h4 {
         text-align: center;
         border-right: none;
         border-bottom: 2px solid #2C7DA0;
         padding-bottom: 0.3rem;
         display: inline-block;
     }
-    .footer-card-item {
+    .footer-card-item-simple {
         flex-direction: column;
         text-align: center;
-        padding: 0.8rem;
-    }
-    .footer-card-item i {
-        margin-bottom: 0.3rem;
-    }
-    .badge-free {
-        display: inline-block;
-        margin-top: 0.2rem;
     }
 }
 /* ========== TEAM SECTION – تصميم احترافي محسّن ========== */
